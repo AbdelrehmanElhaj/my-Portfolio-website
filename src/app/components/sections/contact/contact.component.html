@@ -1,0 +1,57 @@
+<div class="container">
+  <!-- section title -->
+  <h2 class="section-title wow fadeInUp">Get In Touch</h2>
+
+  <div class="spacer-60"></div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <!-- contact info -->
+      <div class="contact-info">
+        <h3 class="wow fadeInUp">Let's talk about everything!</h3>
+        <p class="wow fadeInUp">Don't like forms? Send me an <a href="mailto:hdr333@gmail.com" target="_blank">email</a>. 👋</p>
+      </div>
+    </div>
+
+    <div class="col-md-8">
+      <!-- Contact Form -->
+
+      <form [formGroup]="contactForm" (ngSubmit)="sendEmail()">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Your Name" formControlName="InputName">
+          <div *ngIf="contactForm.get('InputName')?.invalid && contactForm.get('InputName')?.touched" class="text-danger">
+            Name is required
+          </div>
+        </div>
+      
+        <div class="form-group">
+          <input type="email" class="form-control" placeholder="Email Address" formControlName="InputEmail">
+          <div *ngIf="contactForm.get('InputEmail')?.invalid && contactForm.get('InputEmail')?.touched" class="text-danger">
+            Valid email is required
+          </div>
+        </div>
+      
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Subject" formControlName="InputSubject">
+          <div *ngIf="contactForm.get('InputSubject')?.invalid && contactForm.get('InputSubject')?.touched" class="text-danger">
+            Subject is required
+          </div>
+        </div>
+      
+        <div class="form-group">
+          <textarea rows="5" class="form-control" placeholder="Message" formControlName="InputMessage"></textarea>
+          <div *ngIf="contactForm.get('InputMessage')?.invalid && contactForm.get('InputMessage')?.touched" class="text-danger">
+            Message is required
+          </div>
+        </div>
+      
+        <button type="submit" class="btn btn-primary" [disabled]="contactForm.invalid">Send Message</button>
+      </form>
+      
+      
+      <!-- Contact Form end -->
+    </div>
+  </div>
+</div>
+
+

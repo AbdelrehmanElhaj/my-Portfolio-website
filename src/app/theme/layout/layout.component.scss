@@ -1,0 +1,6 @@
+.hdr-logo{
+    width: 180px;        /* Good width for header/logo */
+    height: auto;        /* Keep correct proportions */
+    border-radius: 12px; /* Nice rounded corners */
+    object-fit: contain; /* Makes sure the image fits nicely */
+}
